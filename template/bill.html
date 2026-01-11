@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Generate Bill Receipt</h2>
+{% if message %}
+<p style="color:red;">{{ message }}</p>
+{% endif %}
+<form method="POST">
+    <label>Customer Name:</label><br>
+    <input type="text" name="customer_name" required><br>
+
+    <label>Customer Phone:</label><br>
+    <input type="text" name="customer_phone" required><br>
+
+    <label>Select Product:</label><br>
+    <select name="product_id" required>
+        {% for p in products %}
+            <option value="{{ p[0] }}">{{ p[1] }} (Available: {{ p[3] }}) - ₹{{ p[2] }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label>Quantity:</label><br>
+    <input type="number" name="quantity" required min="1"><br><br>
+
+    <button class="no-print" type="submit">Generate Bill</button>
+</form>
+{% endblock %}

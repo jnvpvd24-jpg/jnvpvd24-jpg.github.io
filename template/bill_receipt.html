@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Bill Receipt</h2>
+<div id="receipt" style="border:1px solid #000; padding:20px; width: 400px; background: white;">
+    <p><strong>Customer Name:</strong> {{ bill.customer_name }}</p>
+    <p><strong>Customer Phone:</strong> {{ bill.customer_phone }}</p>
+    <p><strong>Date:</strong> {{ bill.sale_date }}</p>
+    <hr>
+    <p><strong>Product:</strong> {{ bill.product_name }}</p>
+    <p><strong>Quantity:</strong> {{ bill.quantity }}</p>
+    <p><strong>Unit Price:</strong> ₹{{ bill.unit_price }}</p>
+    <p><strong>Total Price:</strong> ₹{{ bill.total_price }}</p>
+    <hr>
+    <p><strong>Thank you for your purchase!</strong></p>
+</div>
+<br>
+<button class="no-print" onclick="window.print()">Print Receipt</button>
+{% endblock %}
