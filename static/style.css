@@ -1,0 +1,110 @@
+
+header {
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+    display: inline-block;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive 3-column layout using CSS Grid (mobile first) */
+.responsive-grid {
+    display: grid;
+    grid-template-columns: 1fr;  /* single column for mobile */
+    gap: 1rem;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+    .responsive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .responsive-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.responsive-grid > * {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+form {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    width: 300px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* Print styles to hide buttons and nav on printing */
+@media print {
+    button, 
+    nav, 
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #receipt {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
